@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:real_time_ports/screens/login/login_builder.dart';
 
 
 import 'package:real_time_ports/screens/project_builder/project_builder.dart';
@@ -19,7 +20,10 @@ class NyAppRouter {
           },
         ),
         
+        GoRoute(path: '/login',
+        pageBuilder: (context, state) => const MaterialPage(child: LoginBuilder()),
         
+        ),
         GoRoute(
           name: 'myportfolio',
           path: '/myportfolio',

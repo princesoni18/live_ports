@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
           Expanded(
             child: Container(
-                     color: Colors.amber,
+                     color: primaryColor,
              child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -37,6 +37,8 @@ dependencies:
   flutter_svg: ^2.0.10+1
   lottie:
   page_transition: ^2.1.0
+  provider:
+  image_picker: ^1.0.4
   
 
 

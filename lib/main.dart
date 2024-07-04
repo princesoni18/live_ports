@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:real_time_ports/providers/skill_provider.dart';
 import 'package:real_time_ports/routes/app_routes_config.dart';
 import 'package:real_time_ports/themes/dark_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+
+     ChangeNotifierProvider(create: (_)=>SkillProvider())
+    ],
+    
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

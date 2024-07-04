@@ -22,3 +22,5 @@ const primaryColor=Color(0xffF1BE6C);
 const secondaryColor=Color(0xff3C3E43);
 const tertiaryColor=Color(0xff171617);
 const textColor=Colors.white;
+const hintcolor=Colors.grey;
+const  sectionStyle=TextStyle(color: textColor, fontSize: 25);

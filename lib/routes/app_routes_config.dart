@@ -21,7 +21,7 @@ class NyAppRouter {
         ),
         
         GoRoute(path: '/login',
-        pageBuilder: (context, state) => const MaterialPage(child: LoginBuilder()),
+        pageBuilder: (context, state) =>  MaterialPage(child: LoginBuilder()),
         
         ),
         GoRoute(

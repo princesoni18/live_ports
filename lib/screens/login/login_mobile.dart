@@ -56,7 +56,7 @@ bool _showPassword=true;
                     width: 200,
                     alignment: Alignment.center,
                     padding: const EdgeInsets.symmetric(horizontal: 5 ,vertical: 5),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.amber),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: primaryColor),
                     child: Text("Live Ports",style: GoogleFonts.bebasNeue(color: tertiaryColor, fontSize: 50),textAlign: TextAlign.center,)),
                   Text(_isSignup?"Sign Up":"Login",style: const TextStyle(fontSize: 25,color: primaryColor),),
                   const Spacer(),

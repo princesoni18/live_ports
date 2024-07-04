@@ -41,11 +41,11 @@ bool _showPassword=true;
 
       body:  Padding(
         
-        padding: EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
         child: Center(
           child: ConstrainedBox(
             
-            constraints: BoxConstraints(maxWidth: 400),
+            constraints: const BoxConstraints(maxWidth: 400),
             child:Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

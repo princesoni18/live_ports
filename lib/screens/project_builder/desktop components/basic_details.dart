@@ -1,11 +1,25 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:real_time_ports/extensions/hover_extensions.dart';
+import 'package:real_time_ports/routes/app_routes_config.dart';
 import 'package:real_time_ports/themes/dark_theme.dart';
+import 'package:real_time_ports/utils/image_pick.dart';
 import 'package:real_time_ports/widgets/edit_icon.dart';
 import 'package:real_time_ports/widgets/save_button.dart';
-class BasicDetails extends StatelessWidget {
+class BasicDetails extends StatefulWidget {
   const BasicDetails({
     super.key,
   });
+
+  @override
+  State<BasicDetails> createState() => _BasicDetailsState();
+}
+
+class _BasicDetailsState extends State<BasicDetails> {
+
+  Uint8List? _file;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +39,21 @@ class BasicDetails extends StatelessWidget {
        mainAxisAlignment: MainAxisAlignment.spaceBetween,
        children: [
          Row(
-           children:[ const CircleAvatar(
+           children:[  CircleAvatar(
              radius: 50,
            
-             backgroundImage: AssetImage("assets/profile.jpeg"),
+             backgroundImage: _file!=null?MemoryImage(_file!):AssetImage("assets/profile.jpeg"),
              child: Align(
                alignment: Alignment.bottomRight,
-               child: const EditIcon()),
+               child: GestureDetector(
+                onTap: () async{
+                  _file =await pickImage(ImageSource.gallery);
+                 
+                  setState(() {
+                    
+                  });
+                },
+                child: const EditIcon()).showCursorOnHover),
 
              
            ),
@@ -45,9 +67,11 @@ class BasicDetails extends StatelessWidget {
     
     
        Row(
-        children: [GestureDetector(child: MyButton(color: Colors.amber,height: 40,width: 120,text: "See Public View",)),
+        children: [GestureDetector(
+        
+          child: MyButton(color: Colors.amber,height: 40,width: 120,text: "See Public View",)).showCursorOnHover,
         const SizedBox(width: 15,),
-        GestureDetector(child: MyButton(color: Colors.white,height: 40,width: 120,text: "Portfolio Settings",)),
+        GestureDetector(child: MyButton(color: Colors.white,height: 40,width: 120,text: "Portfolio Settings",)).showCursorOnHover,
 
         ]),
        
